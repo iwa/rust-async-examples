@@ -8,6 +8,7 @@ struct ApiResponse<'a> {
     data: &'a str,
 }
 
+// i dont like rust.......
 async fn create_response<'a>(message: &'a str, data: &'a str) -> Result<impl Reply + use<>, Infallible> {
     let response = ApiResponse { message, data };
     Ok(warp::reply::json(&response))
